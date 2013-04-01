@@ -30,11 +30,14 @@ class MainHandler(webapp2.RequestHandler):
     def post(self):
         user_name = self.request.get('user_name')
         cookies = self.request.get('Cookies')
+        description = self.request.get('description')
+        push_time = self.request.get('push_time')
         if cookies:
             results = db.GqlQuery("SELECT * FROM Mydb WHERE name=:1 AND cookies=:2", user_name, cookies)
             if results.get() == None:
-                item = userdb.Mydb(name=user_name, cookies=cookies)
-                item.update = datetime.time(12,0,0)
+                item = userdb.Mydb(name=user_name, cookies=cookies,description=description)
+                item.push = datetime.time(22,0,0)
+                item.push_time_str = push_time
                 item.put()
         
         user = users.get_current_user()

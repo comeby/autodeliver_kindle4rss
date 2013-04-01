@@ -38,6 +38,18 @@ handlers:
   static_files: static/style.css
   upload: static/style.css
   
+- url: /main.jpg
+  static_files: static/main.jpg
+  upload: static/main.jpg
+  
+- url: /ie.jpg
+  static_files: static/ie.jpg
+  upload: static/ie.jpg
+  
+- url: /chrome.jpg
+  static_files: static/chrome.jpg
+  upload: static/chrome.jpg
+  
 - url: /actions-delete.png
   static_files: static/actions-delete.png
   upload: static/actions-delete.png
@@ -58,7 +70,9 @@ handlers:
   static_files: static/menu-user.png
   upload: static/menu-user.png
 
-
+- url: /menu-go-back.png
+  static_files: static/menu-go-back.png
+  upload: static/menu-go-back.png
    
 - url: .*
   script: main.app

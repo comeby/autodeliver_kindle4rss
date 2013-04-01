@@ -23,5 +23,6 @@ class Mydb(db.Model):
     name = db.StringProperty(required=True)
     cookies = db.StringProperty(required=True,indexed=True)
     description = db.StringProperty()
-    update_time = db.TimeProperty()
+    push_time = db.TimeProperty()
+    push_time_str = db.StringProperty()
     Id = db.IntegerProperty()

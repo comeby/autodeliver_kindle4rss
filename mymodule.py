@@ -24,10 +24,14 @@ from google.appengine.ext import db
 
 def show_page(user_name):
     results = db.GqlQuery("SELECT * FROM Mydb WHERE name = :1", user_name)
+    thehour=''
+    for result in results:
+        thehour = thehour+' '+'12'
+        
     logout_url = users.create_logout_url("/")
     template_values = {'user_name' : user_name,
                         'logout_url' : logout_url,
                         'results' : results,
                        }
     path = os.path.join(os.path.dirname(__file__), 'static/template.html')
-    return template.render(path, template_values)
+    return thehour+template.render(path, template_values)

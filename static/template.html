@@ -77,14 +77,16 @@
 							    <td colspan="5" class="table-footer">
 							    <form action="put" method="POST">
 
-					                <input type="hidden" name="user_name" value={{ user_name }}> 
-                                    你的Cookies: 
-                                    <input type="text" name="Cookies" />
-                                    每日定时推送时间:
-                                    <input type="text" name="time" />
-                                    关于本条目的描述:
-                                    <input type="text" name="time" />
+					                <h1>
+                                      <input type="hidden" name="user_name" value={{ user_name }}> 
+                                      <strong>你的Cookies:</strong>
+                                      <input type="text" name="Cookies" />
+                                    <strong>每日定时推送时间(例:22:00:00):</strong> <strong>
+                                    <input type="text" name="push_time" />
+                                    关于本条目的描述:</strong>
+                                    <input type="text" name="description" />
                                     <input type="submit" value="添加条目" class="round button blue text-upper small-button"/>
+					                </h1>
 			                    </form>
 							    
                                     
@@ -100,8 +102,9 @@
                                 <tr>
                                     <td>{{result.name}}</td>
                                     <td>{{result.cookies}}</td> 
-                                    <td>{{result.update_time.hour}}:{{result.update_time.minute}}:{{result.update_time.second}}</td>
-                                    <td>description</td>
+                                    <!--td>{{result.update_time.hour}}:{{result.update_time.minute}}:{{result.update_time.second}}</td-->
+                                    <td>{{result.push_time_str}}</td>
+                                    <td>{{result.description}}</td>
                                     <td>
     									
     									<form name="input" action="del" method="POST">
@@ -133,12 +136,8 @@
 						</tbody>
 						
 					</table>
-					
-					<div class="stripe-separator"><!--  --></div>
-					
-					<p>When you resize the page, all the elements inside the page will resize as well, this being a liquid or fluid layout.</p>
-					
-				</div> <!-- end content-module-main -->
+				</div> 
+				<!-- end content-module-main -->
 			
 			</div> <!-- end content-module -->
 		

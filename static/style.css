@@ -244,6 +244,8 @@ p a, p a:hover { border-bottom: 1px dotted; }
 
 .menu-logoff { background-image: url("menu-logoff.png"); }
 	.menu-logoff:hover { background-image: url("menu-logoff-over.png"); }
+	
+.menu-go-back { background-image: url("menu-go-back.png"); }
 
 .menu-user { background-image: url("menu-user.png"); }
 

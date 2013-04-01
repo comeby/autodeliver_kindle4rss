@@ -38,7 +38,7 @@ class mydeliver(webapp2.RequestHandler):
             str = match.group(0)
             match2 = re.search(r'\d+', str, re.I)
             if match2:
-                if (int(match2.group(0))>2):
+                if (int(match2.group(0))>20):
                     return True
                 else:
                     return False

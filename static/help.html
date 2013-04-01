@@ -1,1 +1,98 @@
-﻿抱歉！help页面待补充！
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns:ice="http://ns.adobe.com/incontextediting">
+<head>
+	<meta charset="utf-8">
+	<title>SimpleAdmin - Full width page</title>
+	
+	<!-- Stylesheets -->
+	<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet'>
+	<link rel="stylesheet" href="style.css">
+	
+	<!-- Optimize for mobile devices -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<script src="includes/ice/ice.js" type="text/javascript"></script>
+</head>
+
+<body>
+<!-- TOP BAR -->
+	<div id="top-bar">
+		
+		<div class="page-full-width cf">
+
+			<!--ul id="nav" class="fl">
+			    
+				<li class="v-sep"><a href="" class="round button dark menu-user image-left">恭喜！你已经作为用户<strong>{{ user_name }}</strong>登录</a></li>
+				
+			</ul> <!-- end nav -->
+					
+			<form action="#" method="POST" id="search-form" class="fr">
+				<fieldset>
+                	<li><a href="/" class="round button dark menu-go-back image-left">返回主页</a></li>
+				</fieldset>
+			</form>
+
+		</div> <!-- end full-width -->	
+	
+	</div> <!-- end top-bar -->
+
+
+	<!-- MAIN CONTENT -->
+	<div id="content">
+		
+		<div class="page-full-width cf">
+
+			<div class="content-module" ice:editable="*">
+			
+				<div class="content-module-heading cf">
+				
+					<h3 class="fl">帮助</h3>
+
+				
+				</div> <!-- end content-module-heading -->
+				
+				
+			  <div class="content-module-main">
+				
+					<h2><a href="http://zh.wikipedia.org/wiki/Cookie">cookie</a>是某些网站为了辨别用户身份而储存在用户本地终端（Client Side）上的数（通常经过加密），我们采用你提供的cookies来模拟你的登录行为，帮助你自动推送你订阅的内容。
+            		</h2>
+					<h2>应用会在以下两种情况下为你推送内容：</h2>
+					<h2>1.你订阅的内容更新条目数达到20条以上。</h2>
+					<h2>2.在你规定的时间，不管有多少条内容都会为你推送。</h2>
+					<h2>下面首先介绍如何抓取cookie</h2>
+					<h1>一、抓取cookie的方法</h1>
+					<h2>1.chrome浏览器</h2>
+					<h3>（1）首先在<a href="http://kindle4rss.com">kindle4rss网站</a>登陆你的账号</h3>
+					<h3>（2）用ctrl+shift+i唤醒chrome浏览器自带的开发者选项，抓取cookies。</h3>
+					<h3>唤出开发者面板后，点开network标签，刷新kindle4rss页面，然后拉到最上面一条，我们可以看到，点击一下，右边跳出一个新窗口，打开header标签，会看到下面有一条cookie的记录，如下图所示，复制cookie对应的值。恭喜，你已经获取到需要的cookie了！跳往第二步吧。</h3>
+					<p><img src="chrome.jpg" longdesc="http://chrome.jpg"></p>
+					<h2>2.ie浏览器</h2>
+					<h3>如果你使用ie浏览器，你需要先下载httpwatch帮助来帮助你抓取cookie。</h3>
+					<h3>（1）到<a href="http://www.httpwatch.com/">这里</a>下载httpwatch并安装</h3>
+					<h3>（2）在<a href="http://kindle4rss.com">kindle4rss网站</a>登陆你的账号</h3>
+					<h3>（3）打开httpwatch，点击左上角的红方块开始记录，然后刷新kindle4rss页面。找到请求kindle4rss对应的那条记录，双击打开，在下面的窗口中头信息标签页中找到cookies，右键复制'session=...',如下图所示。恭喜，你你已经获取到需要的cookie了！跳往下一步吧。</h3>
+					<p><img src="ie.jpg"  longdesc="http://ie.jpg"></p>
+					<p>&nbsp;</p>
+					<h1>二、提交你的cookies</h1>
+					<h3>填写你的cookies，每日定时推送时间，关于本条目的描述，点击添加条目即可！成功后，你将看到刚才所提交的条目，如下图所示。</h3>
+				<h3>注：现在定时推送和表述功能尚未加入！</h3>
+				<p><img src="main.jpg"  longdesc="http://main.jpg"></p>
+			  </div>
+			</div> 
+			<!-- end content-module -->
+		
+		</div> <!-- end full-width -->
+			
+	</div> <!-- end content -->
+	
+	
+	
+	<!-- FOOTER -->
+	<div id="footer">
+
+		<p>&copy; Copyright 2012 <a href="#">comeby</a>. All rights reserved.</p>
+	
+	</div> <!-- end footer -->
+
+</body>
+</html>
