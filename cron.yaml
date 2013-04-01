@@ -1,0 +1,9 @@
+cron:
+
+- description: daily delivery job
+  url: /deliveranyway
+  schedule: every day 14:00
+  
+- description: daily periodically_delivery job
+  url: /deliver
+  schedule: every 5 minutes

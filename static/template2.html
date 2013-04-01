@@ -1,0 +1,33 @@
+﻿<html>
+    <head>
+	    <meta charset="utf-8">
+	    <title>SimpleAdmin - Full width page</title>
+    </head>
+  <body>
+        <b>你好, {{ user_name }}</b>
+        <b><a href="{{ logout_url }}">登出</a></b>
+        <ul>
+            {% for result in results %}
+                <li>{{result.name}} {{result.cookies}} {{result.update_time.hour}}:{{result.update_time.minute}}:{{result.update_time.second}}
+                <!--a href="del?name={{result.name}}&cookies={{result.cookies}}">删除</a-->
+                    
+                    <form name="input" action="del" method="POST">
+                        <input type="hidden" name="user_name" value="{{result.name}}"> 
+                    <!-- post 数据带空格时只能post过去空格前的部分，在value值加上引号就好了-->                        
+                        <input type="hidden" name="cookies" value="{{result.cookies}}"> 
+                        <input type="submit" value="delete" />
+                    </form>
+                   
+                </li>
+            {% endfor %}
+        </ul>
+        <form name="input" action="put" method="POST">
+            <input type="hidden" name="user_name" value={{ user_name }}> 
+            <a href="help.html">你的Cookies:</a> 
+            <input type="text" name="Cookies" />
+            每日定时推送时间:
+            <input type="text" name="time" />
+            <input type="submit" value="Submit" />
+        </form>
+  </body>
+</html>

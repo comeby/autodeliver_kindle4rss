@@ -1,0 +1,69 @@
+application: getkindle4rss
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+  
+- url: /test
+  script: test.app
+  
+- url: /del
+  script: del.app
+  
+- url: /put
+  script: put.app
+  
+- url: /admin
+  script: admin.app
+  
+- url: /deliver
+  script: deliver.app
+  login: admin
+  
+- url: /deliveranyway
+  script: deliveranyway.app
+  login: admin
+  
+- url: /help.html
+  static_files: static/help.html
+  upload: static/help.html
+  
+- url: /style.css
+  static_files: static/style.css
+  upload: static/style.css
+  
+- url: /actions-delete.png
+  static_files: static/actions-delete.png
+  upload: static/actions-delete.png
+  
+- url: /actions-edit.png
+  static_files: static/actions-edit.png
+  upload: static/actions-edit.png
+  
+- url: /menu-logoff.png
+  static_files: static/menu-logoff.png
+  upload: static/menu-logoff.png
+  
+- url: /menu-logoff-over.png
+  static_files: static/menu-logoff-over.png
+  upload: static/menu-logoff-over.png
+  
+- url: /menu-user.png
+  static_files: static/menu-user.png
+  upload: static/menu-user.png
+
+
+   
+- url: .*
+  script: main.app
+  
+libraries:
+- name: webapp2
+  version: "2.5.2"
+  

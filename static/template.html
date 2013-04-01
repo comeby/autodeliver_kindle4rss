@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>SimpleAdmin - Full width page</title>
+	
+	<!-- Stylesheets -->
+	<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet'>
+	<link rel="stylesheet" href="style.css">
+	
+	<!-- Optimize for mobile devices -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+
+	<!-- TOP BAR -->
+	<div id="top-bar">
+		
+		<div class="page-full-width cf">
+
+			<ul id="nav" class="fl">
+			    
+				<li class="v-sep"><a href="" class="round button dark menu-user image-left">恭喜！你已经作为用户<strong>{{ user_name }}</strong>登录</a></li>
+				
+			</ul> <!-- end nav -->
+					
+			<form action="#" method="POST" id="search-form" class="fr">
+				<fieldset>
+					<li><a href="{{ logout_url }}" class="round button dark menu-logoff image-left">登出</a></li>
+				</fieldset>
+			</form>
+
+		</div> <!-- end full-width -->	
+	
+	</div> <!-- end top-bar -->
+
+
+	<!-- MAIN CONTENT -->
+	<div id="content">
+		
+		<div class="page-full-width cf">
+
+			<div class="content-module">
+			
+				<div class="content-module-heading cf">
+				
+					<h3 class="fl">管理你的账户</h3>
+
+				
+				</div> <!-- end content-module-heading -->
+				
+				
+				<div class="content-module-main">
+				
+					<p>使用本程序，你无需提供在kindle4rss注册的账号密码，只需要告诉我你登录Kindle4rss网站时的Cookie即可。支持采用google的OpenId账号注册的Kindle4rss推送。 </p>
+					
+					<p><h1>不知道怎么提取Cookie，请点击<a href="help.html">帮助</a>.<h1></p>
+					
+					<table>
+					
+						<thead>
+					
+							<tr>
+								<th>用户名</th>
+								<th>Cookie</th>
+								<th>推送时间</th>
+								<th>描述</th>
+								<th>动作</th>
+							</tr>
+						
+						</thead>
+
+						<tfoot>
+						   
+							<tr>
+							    <td colspan="5" class="table-footer">
+							    <form action="put" method="POST">
+
+					                <input type="hidden" name="user_name" value={{ user_name }}> 
+                                    你的Cookies: 
+                                    <input type="text" name="Cookies" />
+                                    每日定时推送时间:
+                                    <input type="text" name="time" />
+                                    关于本条目的描述:
+                                    <input type="text" name="time" />
+                                    <input type="submit" value="添加条目" class="round button blue text-upper small-button"/>
+			                    </form>
+							    
+                                    
+								</td>
+								
+							</tr>
+						
+						</tfoot>
+						
+						<tbody>
+						    
+                             {% for result in results %}
+                                <tr>
+                                    <td>{{result.name}}</td>
+                                    <td>{{result.cookies}}</td> 
+                                    <td>{{result.update_time.hour}}:{{result.update_time.minute}}:{{result.update_time.second}}</td>
+                                    <td>description</td>
+                                    <td>
+    									
+    									<form name="input" action="del" method="POST">
+    									    <a href="/" class="table-actions-button ic-table-edit"></a>
+                                            <input type="hidden" name="user_name" value="{{result.name}}"> 
+                                        <!-- post 数据带空格时只能post过去空格前的部分，在value值加上引号就好了-->                        
+                                            <input type="hidden" name="cookies" value="{{result.cookies}}"> 
+                                            <input type="submit" value="" class="table-actions-button ic-table-delete"/>
+                                        </form>
+    								</td>
+                                    <!--a href="del?name={{result.name}}&cookies={{result.cookies}}">删除</a-->
+                                    
+                                    
+                                   
+                                </tr>
+                            {% endfor %}
+                            <!--
+							<tr>
+								<td>Adrian Purdila</td>
+								<td>adipurdila</td>
+								<td><a href="#">adipurdila@gmail.com</a></td>
+								<td><a href="#">adipurdila@gmail.com</a></td>
+								<td>
+									<a href="#" class="table-actions-button ic-table-edit"></a>
+									<a href="#" class="table-actions-button ic-table-delete"></a>
+								</td>
+							</tr>
+						    -->
+						</tbody>
+						
+					</table>
+					
+					<div class="stripe-separator"><!--  --></div>
+					
+					<p>When you resize the page, all the elements inside the page will resize as well, this being a liquid or fluid layout.</p>
+					
+				</div> <!-- end content-module-main -->
+			
+			</div> <!-- end content-module -->
+		
+		</div> <!-- end full-width -->
+			
+	</div> <!-- end content -->
+	
+	
+	
+	<!-- FOOTER -->
+	<div id="footer">
+
+		<p>&copy; Copyright 2012 <a href="#">comeby</a>. All rights reserved.</p>
+	
+	</div> <!-- end footer -->
+
+</body>
+</html>
