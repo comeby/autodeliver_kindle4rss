@@ -25,8 +25,9 @@ from google.appengine.ext import db
 def show_page(user_name):
     results = db.GqlQuery("SELECT * FROM Mydb WHERE name = :1", user_name)
     thehour=''
-    for result in results:
-        thehour = thehour+' '+'12'
+#    for result in results:
+#        if result.push_time:
+#            thehour = thehour+str(result.push_time.hour)+':'+str(result.push_time.minute)+':'+str(result.push_time.second)+'<br>'
         
     logout_url = users.create_logout_url("/")
     template_values = {'user_name' : user_name,

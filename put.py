@@ -36,9 +36,11 @@ class MainHandler(webapp2.RequestHandler):
             results = db.GqlQuery("SELECT * FROM Mydb WHERE name=:1 AND cookies=:2", user_name, cookies)
             if results.get() == None:
                 item = userdb.Mydb(name=user_name, cookies=cookies,description=description)
-                item.push = datetime.time(22,0,0)
+                item.push_time = datetime.time(22,0,0)
                 item.push_time_str = push_time
                 item.put()
+                self.response.out.write(str(item.push_time.hour)+':'+str(item.push_time.minute))
+                self.response.out.write("123456")
         
         user = users.get_current_user()
         if user:
